@@ -1,25 +1,6 @@
-/*!
-
-=========================================================
-* Paper Dashboard React - v1.3.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-* Licensed under MIT (https://github.com/creativetimofficial/paper-dashboard-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Nav } from "reactstrap";
-// javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
 var ps;
@@ -27,10 +8,11 @@ var ps;
 function Sidebar(props) {
   const location = useLocation();
   const sidebar = React.useRef();
-  // verifies if routeName is the one active (in browser input)
+  
   const activeRoute = (routeName) => {
     return location.pathname.indexOf(routeName) > -1 ? "active" : "";
   };
+  
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       ps = new PerfectScrollbar(sidebar.current, {
@@ -44,6 +26,7 @@ function Sidebar(props) {
       }
     };
   });
+  
   return (
     <div
       className="sidebar"
@@ -51,18 +34,12 @@ function Sidebar(props) {
       data-active-color={props.activeColor}
     >
       <div className="logo">
-        <a
-          href="/"
-          className="simple-text logo-mini"
-        >
+        <a href="/" className="simple-text logo-mini">
           <div className="logo-img">
-            <img src={require("assets/img/icons/spalogo.jpeg")} />
+            <img src={require("assets/img/icons/spalogo.jpeg")} alt="logo" />
           </div>
         </a>
-        <a
-          href="/"
-          className="simple-text logo-normal"
-        >
+        <a href="/" className="simple-text logo-normal">
           Amor&Glamour
         </a>
       </div>
@@ -83,6 +60,7 @@ function Sidebar(props) {
               </li>
             );
           })}
+
         </Nav>
       </div>
     </div>

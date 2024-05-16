@@ -27,6 +27,10 @@ import { layouts } from "chart.js";
 import Proveedor from "views/Proveedores";
 import Cliente from "views/Clientes";
 import Horario from "views/Horarios";
+import Usuarios from "views/Usuarios"; // Asegúrate de proporcionar la ruta correcta
+
+// Resto de las importaciones de componentes
+
 
 var routes = [
   {
@@ -35,6 +39,13 @@ var routes = [
     icon: "nc-icon nc-bank",
     component: <Dashboard />,
     layout: "/admin" 
+  },
+  {
+    path: "/usuarios", // Nueva ruta para usuarios
+    name: "Usuarios", // Nombre del elemento en la barra lateral
+    icon: "nc-icon nc-circle-10",
+    component: <Usuarios />, // Componente asociado (debes importarlo)
+    layout: "/admin" // Layout de tu aplicación
   },
   // {
   //   path: "/icons",
